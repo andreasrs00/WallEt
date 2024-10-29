@@ -8,4 +8,6 @@
     <string name="text_nama">Nama Lengkap</string>
     <string name="text_tanggal">Tanggal Lahir</string>
     <string name="text_jenis">Jenis Kelamin</string>
+    <string name="text_landingBawah">Belum Punya Akun?</string>
+    <string name="text_editProfile">Edit Profile</string>
 </resources>
