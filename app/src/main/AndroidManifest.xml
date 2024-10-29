@@ -13,13 +13,23 @@
         android:theme="@style/Theme.Wallet"
         tools:targetApi="31">
         <activity
-            android:name=".afterSignUp"
-            android:theme="@style/Theme.Design.Light.NoActionBar"
-            android:exported="true" />
-        <activity
-            android:name=".signupPage"
+            android:name=".editprofilePage"
             android:theme="@style/Theme.Design.Light.NoActionBar"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".afterSignUp"
+            android:exported="true"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
+        <activity
+            android:name=".signupPage"
+            android:exported="true"
+            android:theme="@style/Theme.Design.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,8 +48,8 @@
         </activity>
         <activity
             android:name=".loadingScreen"
-            android:theme="@style/Theme.Design.Light.NoActionBar"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.Design.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
