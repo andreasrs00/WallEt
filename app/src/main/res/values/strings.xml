@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">wallet</string>
+    <string name="text_selamat">Selamat Datang</string>
+    <string name="text_daftar">DAFTAR</string>
+    <string name="text_email">E-mail</string>
+    <string name="text_password">Password</string>
+    <string name="text_masuk">LOG IN</string>
+    <string name="text_nama">Nama Lengkap</string>
+    <string name="text_tanggal">Tanggal Lahir</string>
+    <string name="text_jenis">Jenis Kelamin</string>
+</resources>
