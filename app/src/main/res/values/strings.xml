@@ -10,4 +10,16 @@
     <string name="text_jenis">Jenis Kelamin</string>
     <string name="text_landingBawah">Belum Punya Akun?</string>
     <string name="text_editProfile">Edit Profile</string>
+    <string name="tv_hello">Hello</string>
+    <string name="tv_balance">Balance</string>
+    <string name="tv_show_more">Show More >></string>
+    <string name="tv_balance_nominal">Rp. 12.000.000</string>
+
+    <string name="tv_catalog1">Transaction</string>
+    <string name="tv_catalog2">Financial Db</string>
+    <string name="tv_catalog3">Financial Reports</string>
+    <string name="tv_catalog4">Budgeting</string>
+    <string name="tv_catalog5">Investment OVR</string>
+    <string name="tv_catalog6">Debt &amp; Savings</string>
+
 </resources>
