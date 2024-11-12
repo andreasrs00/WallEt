@@ -5,7 +5,10 @@
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="adayPage">
+      <SelectionState runConfigName="afterSignUp">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="aweekPage">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>
