@@ -26,4 +26,16 @@
     <string name="tv_catalog5">Investment OVR</string>
     <string name="tv_catalog6">Debt &amp; Savings</string>
 
+    <string name="tv_income">Income</string>
+    <string name="tv_expenditure">Expenditure</string>
+
+    <string name="tv_news_app_catalog1">Growth &amp; Coins</string>
+    <string name="tv_news_app_catalog2">Portfolio Diversity</string>
+    <string name="tv_news_app_catalog3">Crypto Tech</string>
+    <string name="tv_news_app_catalog4">Financial Goals</string>
+
+
+
+
+
 </resources>
