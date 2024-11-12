@@ -145,6 +145,7 @@
             <ImageView
                 android:layout_width="32dp"
                 android:layout_height="32dp"
+                android:src="@drawable/Income"
                 android:contentDescription="Income Icon" />
 
             <TextView
@@ -175,6 +176,7 @@
             <ImageView
                 android:layout_width="32dp"
                 android:layout_height="32dp"
+                android:src="@drawable/Expenses"
                 android:contentDescription="Expense Icon" />
 
             <TextView
