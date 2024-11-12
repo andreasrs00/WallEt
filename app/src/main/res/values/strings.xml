@@ -10,8 +10,8 @@
     <string name="text_jenis">Jenis Kelamin</string>
     <string name="text_landingBawah">Belum Punya Akun?</string>
     <string name="text_editProfile">Edit Profile</string>
-    <string name= "first_name">First Name:</string>
-    <string name= "last_name">Last Name:</string>
-    <string name= "recent"><b>Recent Transaction</b></string>
-    <string name= "tap">Tap the table for more details</string>
+    <string name="first_name">First Name:</string>
+    <string name="last_name">Last Name:</string>
+    <string name="recent"><b>Recent Transaction</b></string>
+    <string name="tap">Tap the table for more details</string>
 </resources>
