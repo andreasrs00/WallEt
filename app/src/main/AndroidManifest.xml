@@ -13,17 +13,13 @@
         android:theme="@style/Theme.Wallet"
         tools:targetApi="31">
         <activity
-            android:name=".HomePage"
-            android:exported="false" />
-        <activity
-            android:name=".adayPage"
-            android:exported="true"
+            android:name=".amontlyPage"
             android:theme="@style/Theme.Design.Light.NoActionBar"
-            />
+            android:exported="true" />
         <activity
-            android:name=".notificationPage"
-            android:exported="true"
-            android:theme="@style/Theme.Design.Light.NoActionBar">
+            android:name=".aweekPage"
+            android:theme="@style/Theme.Design.Light.NoActionBar"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
