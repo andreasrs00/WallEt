@@ -242,6 +242,172 @@
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <LinearLayout
+        android:id="@+id/info_transaction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/catalog_home_page"
+        android:gravity="center"
+        android:weightSum="2"
+        android:layout_marginTop="12dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/income_home_page"
+            android:layout_width="0dp"
+            android:layout_height="76dp"
+            android:background="@drawable/border_home"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:orientation="horizontal"
+            android:layout_marginEnd="20dp">
+            <TextView
+                android:id="@+id/tv_income"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="@string/tv_income"
+                android:textColor="@color/green"
+                android:textSize="16sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_income"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="20sp"
+                android:text="@string/tv_balance_nominal"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/expenditure_home_page"
+            android:layout_width="0dp"
+            android:layout_height="76dp"
+            android:background="@drawable/border_home"
+            android:layout_weight="1"
+            android:padding="12dp">
+            <TextView
+                android:id="@+id/tv_expenditure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="@string/tv_expenditure"
+                android:textColor="@color/red"
+                android:textSize="16sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_expenditure"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="20sp"
+                android:text="@string/tv_balance_nominal"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/news_app"
+        android:foregroundGravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info_transaction"
+        android:layout_marginTop="12dp"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:id="@+id/news_app_catalog1"
+                android:layout_width="wrap_content"
+                android:layout_height="160dp"
+                android:background="@drawable/border_home"
+                android:orientation="horizontal"
+                android:layout_marginEnd="20dp">
+                <TextView
+                    android:layout_width="107dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/tv_news_app_catalog1"
+                    android:gravity="center"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textSize="18sp"
+                    android:padding="12dp"/>
+                <ImageView
+                    android:layout_width="140dp"
+                    android:layout_height="160dp"
+                    android:src="@drawable/image_growth_coin" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/news_app_catalog2"
+                android:layout_width="wrap_content"
+                android:layout_height="160dp"
+                android:background="@drawable/border_home"
+                android:orientation="horizontal"
+                android:layout_marginEnd="20dp">
+                <TextView
+                    android:layout_width="107dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/tv_news_app_catalog2"
+                    android:gravity="center"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textSize="18sp"
+                    android:padding="12dp"
+                    />
+                <ImageView
+                    android:layout_width="140dp"
+                    android:layout_height="160dp"
+                    android:src="@drawable/image_portfolio_diversity" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/news_app_catalog3"
+                android:layout_width="wrap_content"
+                android:layout_height="160dp"
+                android:background="@drawable/border_home"
+                android:orientation="horizontal"
+                android:layout_marginEnd="20dp">
+                <TextView
+                    android:layout_width="107dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/tv_news_app_catalog3"
+                    android:gravity="center"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textSize="18sp"
+                    />
+                <ImageView
+                    android:layout_width="140dp"
+                    android:layout_height="160dp"
+                    android:src="@drawable/image_crypto_tech" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/news_app_catalog4"
+                android:layout_width="wrap_content"
+                android:layout_height="160dp"
+                android:background="@drawable/border_home"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="107dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/tv_news_app_catalog4"
+                    android:gravity="center"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textSize="18sp" />
+                <ImageView
+                    android:layout_width="140dp"
+                    android:layout_height="160dp"
+                    android:src="@drawable/image_financial_goals" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+
 
 
 
