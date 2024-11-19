@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:layout_marginBottom="12dp">
+
+    <ImageView
+        android:id="@+id/transaction_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/rent_icon"
+        android:padding="8dp"
+        android:background="@drawable/bordercornerradius" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:weightSum="2"
+        android:layout_marginStart="12dp">
+        <TextView
+            android:id="@+id/transaction_title"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="@string/tv_others"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:textSize="16sp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/primary"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="@string/tv_date_card_transaction"
+            android:fontFamily="@font/montserrat_regular"
+            android:textSize="12sp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/blue"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/transaction_category"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/tv_rent"
+        android:fontFamily="@font/montserrat_regular"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:textColor="@color/primary"/>
+    <TextView
+        android:id="@+id/transaction_amount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/tv_balance_nominal"
+        android:fontFamily="@font/montserrat_regular"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:textColor="@color/primary"/>
+
+</LinearLayout>
