@@ -13,13 +13,22 @@
         android:theme="@style/Theme.Wallet"
         tools:targetApi="31">
         <activity
+            android:name=".addExpense"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".amontlyPage"
-            android:theme="@style/Theme.Design.Light.NoActionBar"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity
             android:name=".aweekPage"
-            android:theme="@style/Theme.Design.Light.NoActionBar"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.Design.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
