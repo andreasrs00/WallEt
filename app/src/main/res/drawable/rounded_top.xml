@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/secondary" />  <!-- Set your background color -->
+    <corners android:topLeftRadius="65dp" android:topRightRadius="65dp" />  <!-- Rounded corners at the top -->
+</shape>
