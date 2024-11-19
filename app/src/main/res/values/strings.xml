@@ -35,4 +35,11 @@
     <string name="tv_news_app_catalog4">Financial Goals</string>
 
 
+    <string name="tv_others">Other</string>
+    <string name="tv_recent_transaction">Recent Transaction</string>
+    <string name="tv_rent">Rent</string>
+    <string name="tv_date_card_transaction">17:00 - October 24</string>
+
+
+
 </resources>
