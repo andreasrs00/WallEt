@@ -61,27 +61,26 @@
             android:id="@+id/tv_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Date"
+            android:text="@string/tv_date"
             android:textStyle="bold"
             android:textColor="@color/primary"
-            android:layout_marginBottom="8dp" /> <!-- Jarak antara TextView dan EditText di bawahnya -->
+            android:layout_marginBottom="8dp" />
 
         <EditText
             android:id="@+id/dateInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Date"
-            android:text="October 30, 2024"
             android:background="@drawable/edittext_background"
             android:padding="12dp"
             android:inputType="date"
-            android:layout_marginBottom="16dp" /> <!-- Jarak antar elemen -->
+            android:layout_marginBottom="16dp" />
 
         <TextView
             android:id="@+id/tv_category"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Category"
+            android:text="@string/tv_category"
             android:textStyle="bold"
             android:textColor="@color/primary"
             android:layout_marginBottom="8dp" />
@@ -93,13 +92,14 @@
             android:layout_marginTop="12dp"
             android:background="@drawable/edittext_background"
             android:padding="12dp"
+            android:entries="@array/category_items"
             android:layout_marginBottom="16dp" />
 
         <TextView
             android:id="@+id/tv_amount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Amount"
+            android:text="@string/tv_amount"
             android:textStyle="bold"
             android:textColor="@color/primary"
             android:layout_marginBottom="8dp" />
@@ -110,7 +110,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:hint="Amount"
-            android:text="$26.00"
             android:background="@drawable/edittext_background"
             android:padding="12dp"
             android:inputType="numberDecimal"
@@ -120,7 +119,7 @@
             android:id="@+id/tv_expense"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Expense Title"
+            android:text="@string/tv_expense_title"
             android:textStyle="bold"
             android:textColor="@color/primary"
             android:layout_marginBottom="8dp" />
@@ -131,7 +130,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:hint="Expense Title"
-            android:text="Dinner"
             android:background="@drawable/edittext_background"
             android:padding="12dp"
             android:inputType="text"
@@ -142,7 +140,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginTop="12dp"
-            android:hint="Enter Message"
+            android:hint="@string/tv_enter_message"
             android:background="@drawable/edittext_background"
             android:padding="12dp"
             android:inputType="textMultiLine"
@@ -155,7 +153,7 @@
             android:layout_marginTop="20dp"
             android:backgroundTint="@color/primary"
             android:padding="12dp"
-            android:text="Save"
+            android:text="@string/tv_save"
             android:textColor="@android:color/white"
             android:layout_gravity="center_horizontal" />
 
