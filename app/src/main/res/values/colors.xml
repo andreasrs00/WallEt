@@ -5,5 +5,9 @@
     <color name="third">#F4F4F4</color>
     <color name="green">#197F2C</color>
     <color name="red">#BA1B1B</color>
+    <color name="gray">#F4F4F4F4</color>
+
+    <color name="grey">#E9E9E9</color>
+    <color name="blue">#0068FF</color>
 
 </resources>
