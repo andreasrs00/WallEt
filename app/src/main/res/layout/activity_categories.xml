@@ -97,7 +97,6 @@
             android:layout_height="wrap_content"
             android:text="@string/total_balance"
             app:layout_constraintStart_toEndOf="@id/iv_expense"
-            app:layout_constraintEnd_toEndOf=""
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginStart="5dp"
             />
@@ -128,18 +127,16 @@
         android:background="@drawable/rounded_top"
         android:padding="20dp"
         android:columnCount="3"
-    android:rowCount="3"
-
-        >
+        android:rowCount="1">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:gravity="center"
             android:background="@drawable/border_corner_categories"
-            android:layout_margin="10dp"
+            android:layout_margin="12dp"
             android:orientation="vertical">
 
             <ImageView
@@ -158,12 +155,12 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:background="@drawable/border_corner_categories"
             android:layout_columnWeight="1"
-            android:layout_margin="10dp"
+            android:layout_margin="12dp"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -181,7 +178,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
@@ -203,7 +200,7 @@
                 android:textColor="#FFFFFF" />
         </LinearLayout>
  <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
@@ -215,7 +212,7 @@
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/makanan" />
+                android:src="@drawable/grocier" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -225,7 +222,7 @@
                 android:textColor="#FFFFFF" />
         </LinearLayout>
  <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
@@ -237,17 +234,17 @@
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/makanan" />
+                android:src="@drawable/rents" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Food"
+                android:text="@string/rent"
                 android:textColor="#FFFFFF" />
         </LinearLayout>
  <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
@@ -259,80 +256,80 @@
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/makanan" />
+                android:src="@drawable/gifts" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Food"
+                android:text="@string/gifts"
                 android:textColor="#FFFFFF" />
         </LinearLayout>
- <LinearLayout
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-     android:background="@drawable/border_corner_categories"
-     android:layout_margin="10dp"
+            android:background="@drawable/border_corner_categories"
+            android:layout_margin="10dp"
             android:gravity="center"
             android:orientation="vertical">
 
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/makanan" />
+                android:src="@drawable/savings" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Food"
+                android:text="@string/savings"
                 android:textColor="#FFFFFF" />
         </LinearLayout>
- <LinearLayout
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-     android:background="@drawable/border_corner_categories"
-     android:layout_margin="10dp"
+            android:background="@drawable/border_corner_categories"
+            android:layout_margin="10dp"
             android:gravity="center"
             android:orientation="vertical">
 
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/makanan" />
+                android:src="@drawable/entertaiment" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Food"
+                android:text="@string/entertaiment"
                 android:textColor="#FFFFFF" />
         </LinearLayout><LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
         android:background="@drawable/border_corner_categories"
         android:layout_margin="10dp"
-            android:gravity="center"
-            android:orientation="vertical">
+        android:gravity="center"
+        android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/makanan" />
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/more" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Food"
-                android:textColor="#FFFFFF" />
-        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/more"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
 
 
 
