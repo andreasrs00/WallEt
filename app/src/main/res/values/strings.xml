@@ -70,6 +70,16 @@
     <string name="tv_rent">Rent</string>
     <string name="tv_date_card_transaction">17:00 - October 24</string>
 
+    <string name="tv_welcome">Akun Berhasil Ditambahkan</string>
+    <string name="tv_landing_bawah">Sudah Punya Akun?</string>
+    <string name="tv_landing_bawah2">Belum Punya Akun?</string>
+    <string name="tv_masuk">MASUK</string>
+    <string name="tv_notification">Notification</string>
+    <string name="tv_common">Common</string>
+    <string name="tv_gennotif">General Notification</string>
+    <string name="tv_sound">Sound</string>
+    <string name="tv_vibrate">Vibrate</string>
+
 
 
 </resources>
