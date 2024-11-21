@@ -1,21 +1,22 @@
 package com.example.wallet
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import androidx.activity.enableEdgeToEdge
+import android.os.Handler
+import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class loadingScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_loading_screen) // Inflate the layout first
 
-        val myView = findViewById<View>(R.id.main) // Find the view
-        myView?.setOnApplyWindowInsetsListener { view, insets ->
-            // Handle window insets
-            insets
-        }
+        // Timer untuk menunda perpindahan halaman
+        Handler(Looper.getMainLooper()).postDelayed({
+            // Pindah ke LandingPage
+            val intent = Intent(this, landingPage::class.java)
+            startActivity(intent)
+            finish() // Tutup activity loadingScreen agar tidak bisa kembali dengan tombol back
+        }, 500) // 3000 ms = 3 detik
     }
 }

@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -12,17 +11,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Wallet"
         tools:targetApi="31">
+
         <activity
             android:name=".categories"
-
-            android:name=".addExpense"
             android:exported="true"
             android:theme="@style/Theme.Design.Light.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".analysisPage"
@@ -33,21 +26,11 @@
             android:name=".profile"
             android:exported="true"
             android:theme="@style/Theme.Design.Light.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".editprofilePage"
             android:exported="true"
             android:theme="@style/Theme.Design.Light.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".afterSignUp"
@@ -57,21 +40,11 @@
             android:name=".signupPage"
             android:exported="true"
             android:theme="@style/Theme.Design.Light.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".loginPage"
             android:exported="true"
             android:theme="@style/Theme.Design.Light.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".loadingScreen"
@@ -79,40 +52,23 @@
             android:theme="@style/Theme.Design.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".landingPage"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.DayNight">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:theme="@style/Theme.Design.Light.NoActionBar">
         </activity>
         <activity
             android:name=".transactionPage"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.DayNight">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:theme="@style/Theme.Design.Light.NoActionBar">
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".HomePage"
             android:exported="true"
             android:theme="@style/Theme.Design.Light.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
-
 </manifest>

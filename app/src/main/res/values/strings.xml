@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">wallet</string>
     <string name="text_selamat">Selamat Datang</string>
-    <string name="text_daftar">DAFTAR</string>
+    <string name="text_daftar"><u>Daftar</u></string>
     <string name="text_email">E-mail</string>
     <string name="text_password">Password</string>
     <string name="text_masuk">LOG IN</string>
@@ -73,12 +73,13 @@
     <string name="tv_welcome">Akun Berhasil Ditambahkan</string>
     <string name="tv_landing_bawah">Sudah Punya Akun?</string>
     <string name="tv_landing_bawah2">Belum Punya Akun?</string>
-    <string name="tv_masuk">MASUK</string>
+    <string name="tv_masuk"><u>Masuk</u></string>
     <string name="tv_notification">Notification</string>
     <string name="tv_common">Common</string>
     <string name="tv_gennotif">General Notification</string>
     <string name="tv_sound">Sound</string>
     <string name="tv_vibrate">Vibrate</string>
+    <string name="tv_daftar">Daftar</string>
 
 
 
