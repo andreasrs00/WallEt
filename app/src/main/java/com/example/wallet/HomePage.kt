@@ -21,16 +21,5 @@ class HomePage : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val textView: TextView = findViewById(R.id.tvrecentview)
-        val text = getString(R.string.recent)
-        val spannable = SpannableString(text)
-
-
-        spannable.setSpan(UnderlineSpan(), text.indexOf("Transaction"), text.length, 2)
-
-        textView.text = spannable
-
-        val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
-        recyclerView.layoutManager = GridLayoutManager(this, 2) // 2 kolom
     }
 }
