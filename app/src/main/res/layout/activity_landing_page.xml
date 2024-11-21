@@ -55,7 +55,7 @@
         android:id="@+id/tv_landingBawah"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sudah Punya Akun?"
+        android:text="@string/text_landingBawah"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_daftar"
@@ -66,9 +66,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="4dp"
-        android:text="MASUK"
+        android:text="@string/tv_masuk"
         app:layout_constraintStart_toEndOf="@id/tv_landingBawah"
         app:layout_constraintTop_toBottomOf="@id/btn_daftar"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         />
 

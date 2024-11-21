@@ -36,7 +36,7 @@
                 android:layout_centerInParent="true"
                 android:layout_marginTop="16dp"
                 android:contentDescription="Back Arrow"
-                android:src="@drawable/expense_icon" />
+                android:src="@drawable/back_icon" />
 
             <TextView
                 android:id="@+id/title"
