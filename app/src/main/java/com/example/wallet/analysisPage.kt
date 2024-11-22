@@ -1,6 +1,7 @@
 package com.example.wallet
 
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -73,5 +74,8 @@ class analysisPage : AppCompatActivity() {
 
         // Default tab selection (e.g., Daily tab selected on launch)
         tabDaily.performClick()
+
+        val navbar = findViewById<View>(R.id.navbar)
+        NavBarComponent(this, navbar)
     }
 }

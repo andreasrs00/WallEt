@@ -1,6 +1,7 @@
 package com.example.wallet
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -41,5 +42,8 @@ class transactionPage : AppCompatActivity() {
         val recyclerView: RecyclerView = findViewById(R.id.month_recycler_view)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = MonthAdapter(monthList)
+
+        val navbar = findViewById<View>(R.id.navbar)
+        NavBarComponent(this, navbar)
     }
 }
