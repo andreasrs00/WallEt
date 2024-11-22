@@ -10,6 +10,8 @@ import android.widget.TableRow
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 
 class profile : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -17,13 +19,24 @@ class profile : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
-        val myLayout = findViewById<View>(R.id.main)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { view, insets ->
+            val systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            // Gunakan padding XML sebagai dasar
+            val defaultPaddingLeft = view.paddingLeft
+            val defaultPaddingTop = view.paddingTop
+            val defaultPaddingRight = view.paddingRight
+            val defaultPaddingBottom = view.paddingBottom
 
-        myLayout?.setOnApplyWindowInsetsListener { view, insets ->
-            view.onApplyWindowInsets(insets)
-
-
+            // Tambahkan padding dari WindowInsets
+            view.setPadding(
+                defaultPaddingLeft + systemBarsInsets.left,
+                defaultPaddingTop + systemBarsInsets.top,
+                defaultPaddingRight + systemBarsInsets.right,
+                defaultPaddingBottom + systemBarsInsets.bottom
+            )
+            WindowInsetsCompat.CONSUMED
         }
+
         val data = listOf(
             listOf("Tanggal", "Keterangan", "Pemasukan", "Pengeluaran"),
             listOf("2 Maret 2024", "Gaji", "5,000,000", "-"),
@@ -78,7 +91,8 @@ class profile : AppCompatActivity() {
                 tableLayout.addView(divider) // Jangan tambahkan garis pembatas di baris terakhir
             }
         }
-
+        val navbar = findViewById<View>(R.id.navbar)
+        NavBarComponent(this, navbar)
 
     }
 }

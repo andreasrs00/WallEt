@@ -1,6 +1,8 @@
 package com.example.wallet
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -15,6 +17,10 @@ class editprofilePage : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+        findViewById<View>(R.id.backArrow).setOnClickListener {
+            val intent = Intent(this, HomePage::class.java)
+            startActivity(intent)
         }
     }
 }

@@ -50,8 +50,6 @@
     </string-array>
 
 
-
-
     <string name="kategori">Categories</string>
     <string name="total_balance">Total Balance</string>
     <string name="balance_income">$7,783.00</string>
@@ -80,7 +78,6 @@
     <string name="tv_sound">Sound</string>
     <string name="tv_vibrate">Vibrate</string>
     <string name="tv_daftar">Daftar</string>
-
 
 
 </resources>
