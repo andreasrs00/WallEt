@@ -62,35 +62,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edt_email_signup"/>
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/edt_tanggal"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/border"
-        android:drawableStart="@drawable/date_icon"
-        android:drawablePadding="10dp"
-        android:hint="@string/text_tanggal"
-        android:padding="12dp"
-        android:textColor="@color/primary"
-        android:layout_marginTop="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edt_password_signup"/>
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/edt_jenis"
+    <RadioGroup
+        android:id="@+id/edt_gender"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/border"
-        android:drawableStart="@drawable/gender_icon"
-        android:drawablePadding="10dp"
-        android:hint="@string/text_jenis"
         android:padding="12dp"
         android:textColor="@color/primary"
         android:layout_marginTop="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edt_tanggal"/>
+        app:layout_constraintTop_toBottomOf="@id/edt_password_signup">
+
+        <RadioButton
+            android:id="@+id/gender_male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_male" />
+
+        <RadioButton
+            android:id="@+id/gender_female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_female" />
+    </RadioGroup>
 
     <Button
         android:id="@+id/btn_daftar"
