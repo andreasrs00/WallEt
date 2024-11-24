@@ -128,6 +128,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
     
     <GridLayout
+        android:id="@+id/glcategories"
         android:layout_width="match_parent"
         android:layout_height="600dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -139,6 +140,7 @@
         android:rowCount="1">
 
         <LinearLayout
+            android:id="@+id/llmakanan"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
@@ -164,6 +166,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/lltransport"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
@@ -187,6 +190,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/llmedicine"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
@@ -209,14 +213,15 @@
                 android:textColor="#FFFFFF" />
         </LinearLayout>
  <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:background="@drawable/border_corner_categories"
-            android:layout_margin="10dp"
-            android:gravity="center"
-            android:orientation="vertical">
+     android:layout_width="0dp"
+     android:layout_height="wrap_content"
+     android:layout_rowWeight="1"
+     android:layout_columnWeight="1"
+     android:background="@drawable/border_corner_categories"
+     android:layout_margin="10dp"
+     android:gravity="center"
+     android:id="@+id/llgroceries"
+     android:orientation="vertical">
 
             <ImageView
                 android:layout_width="40dp"
@@ -231,14 +236,15 @@
                 android:textColor="#FFFFFF" />
         </LinearLayout>
  <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:background="@drawable/border_corner_categories"
-            android:layout_margin="10dp"
-            android:gravity="center"
-            android:orientation="vertical">
+     android:layout_width="0dp"
+     android:layout_height="wrap_content"
+     android:layout_rowWeight="1"
+     android:layout_columnWeight="1"
+     android:background="@drawable/border_corner_categories"
+     android:layout_margin="10dp"
+     android:gravity="center"
+     android:id="@+id/llrent"
+     android:orientation="vertical">
 
             <ImageView
                 android:layout_width="40dp"
@@ -253,14 +259,15 @@
                 android:textColor="#FFFFFF" />
         </LinearLayout>
  <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
+     android:layout_width="0dp"
+     android:layout_height="wrap_content"
+     android:layout_rowWeight="1"
+     android:layout_columnWeight="1"
      android:background="@drawable/border_corner_categories"
      android:layout_margin="10dp"
-            android:gravity="center"
-            android:orientation="vertical">
+     android:gravity="center"
+     android:id="@+id/llgifts"
+     android:orientation="vertical">
 
             <ImageView
                 android:layout_width="40dp"
@@ -275,6 +282,7 @@
                 android:textColor="#FFFFFF" />
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/llsavings"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
@@ -297,6 +305,7 @@
                 android:textColor="#FFFFFF" />
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/llentertaiment"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
@@ -320,19 +329,19 @@
         </LinearLayout>
         <LinearLayout
             android:id="@+id/add_transaction"
-            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:background="@drawable/border_corner_categories"
             android:layout_margin="10dp"
             android:gravity="center"
+            android:layout_width="0dp"
             android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/more" />
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/more" />
 
             <TextView
                 android:layout_width="wrap_content"
