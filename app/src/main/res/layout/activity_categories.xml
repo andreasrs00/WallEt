@@ -65,7 +65,7 @@
             android:id="@+id/tv_total_balance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/total_balance"
+            android:text="@string/total_Income"
             app:layout_constraintStart_toEndOf="@id/iv_income"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginStart="5dp"
@@ -104,7 +104,7 @@
             android:id="@+id/tv_total_expense"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/total_balance"
+            android:text="@string/total_Expenses"
             app:layout_constraintStart_toEndOf="@id/iv_expense"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginStart="5dp"
@@ -317,28 +317,31 @@
                 android:layout_marginTop="8dp"
                 android:text="@string/entertaiment"
                 android:textColor="#FFFFFF" />
-        </LinearLayout><LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_rowWeight="1"
-        android:layout_columnWeight="1"
-        android:background="@drawable/border_corner_categories"
-        android:layout_margin="10dp"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/more" />
-
-        <TextView
-            android:layout_width="wrap_content"
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/add_transaction"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/more"
-            android:textColor="#FFFFFF" />
-    </LinearLayout>
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/border_corner_categories"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/more" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/tv_add_transaction"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
 
 
 

@@ -1,5 +1,6 @@
 package com.example.wallet
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
@@ -31,5 +32,12 @@ class categories : AppCompatActivity() {
         }
         val navbar = findViewById<View>(R.id.navbar)
         NavBarComponent(this, navbar)
+
+        val tvaddtransaction = findViewById<View>(R.id.add_transaction)
+        tvaddtransaction.setOnClickListener {
+            // Pindah ke signUpPage
+            val intent = Intent(this, addExpense::class.java)
+            startActivity(intent)
+        }
     }
 }

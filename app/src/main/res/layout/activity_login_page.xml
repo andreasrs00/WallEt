@@ -18,7 +18,7 @@
         android:layout_marginTop="20dp"/>
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/edt_email"
+        android:id="@+id/edt_email_login"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/border"
@@ -29,10 +29,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_logo"
-        app:layout_constraintBottom_toTopOf="@id/edt_password"/>
+        app:layout_constraintBottom_toTopOf="@id/edt_password_login"/>
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/edt_password"
+        android:id="@+id/edt_password_login"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/border"
@@ -43,7 +43,7 @@
         android:layout_marginTop="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edt_email"/>
+        app:layout_constraintTop_toBottomOf="@id/edt_email_login"/>
 
     <Button
         android:id="@+id/btn_login"

@@ -155,6 +155,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="12dp"/>
     <androidx.recyclerview.widget.RecyclerView
+        android:background="@drawable/rounded_background"
         android:id="@+id/month_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
