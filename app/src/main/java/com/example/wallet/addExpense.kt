@@ -1,5 +1,6 @@
 package com.example.wallet
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
@@ -19,5 +20,6 @@ class addExpense : AppCompatActivity() {
         }
         val navbar = findViewById<View>(R.id.navbar)
         NavBarComponent(this, navbar)
+
     }
 }

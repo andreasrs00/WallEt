@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray"
-    tools:context=".addExpense">
-<androidx.constraintlayout.widget.ConstraintLayout
+    tools:context=".addExpense"
     android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:layout_marginTop="20dp"
     android:background="@color/third">
 
@@ -36,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Add Expenses"
+            android:text="@string/tv_add_transaction"
             android:textColor="@color/primary"
             android:textSize="30sp"
             android:textStyle="bold" />
@@ -53,7 +49,7 @@
         app:layout_constraintTop_toBottomOf="@id/containeratas"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toTopOf="@id/containernavbar">
 
         <TextView
             android:id="@+id/tv_date"
@@ -72,6 +68,25 @@
             android:background="@drawable/edittext_background"
             android:padding="12dp"
             android:inputType="date"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/tv_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_type"
+            android:textStyle="bold"
+            android:textColor="@color/primary"
+            android:layout_marginBottom="8dp" />
+
+        <Spinner
+            android:id="@+id/TypeSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/edittext_background"
+            android:padding="12dp"
+            android:entries="@array/type_items"
             android:layout_marginBottom="16dp" />
 
         <TextView
@@ -133,16 +148,6 @@
             android:inputType="text"
             android:layout_marginBottom="16dp" />
 
-        <EditText
-            android:id="@+id/messageInput"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginTop="12dp"
-            android:hint="@string/tv_enter_message"
-            android:background="@drawable/edittext_background"
-            android:padding="12dp"
-            android:inputType="textMultiLine"
-            android:layout_marginBottom="20dp" />
 
         <Button
             android:id="@+id/saveButton"
@@ -157,23 +162,25 @@
 
     </LinearLayout>
 
+    <RelativeLayout
+        android:id="@id/containernavbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/navbar" />
+
+        <include
+            layout="@layout/navbar"
+            android:id="@+id/navbar"/>
+
+    </RelativeLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-    <RelativeLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="bottom">
-
-    <FrameLayout
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/navbar" />
-
-    <include
-        layout="@layout/navbar"
-        android:id="@+id/navbar"/>
-
-    </RelativeLayout>
-</FrameLayout>

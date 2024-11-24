@@ -52,6 +52,8 @@
 
     <string name="kategori">Categories</string>
     <string name="total_balance">Total Balance</string>
+    <string name="total_Income">Total Income</string>
+    <string name="total_Expenses">Total Expenses</string>
     <string name="balance_income">$7,783.00</string>
     <string name="food">Food</string>
     <string name="transport">Transport</string>
@@ -61,7 +63,7 @@
     <string name="gifts">Gifts</string>
     <string name="savings">Savings</string>
     <string name="entertaiment">Entertaiment</string>
-    <string name="more">More</string>
+    <string name="Add_transaction">Add Transaction</string>
 
     <string name="tv_others">Other</string>
     <string name="tv_recent_transaction">Recent Transaction</string>
@@ -78,6 +80,15 @@
     <string name="tv_sound">Sound</string>
     <string name="tv_vibrate">Vibrate</string>
     <string name="tv_daftar">Daftar</string>
+    <string name="tv_type">Type</string>
+    <string name="tv_add_transaction">Add Transaction</string>
+
+
+    <string-array name="type_items">
+        <item>Select the Type</item>
+        <item>Income</item>
+        <item>Expenses</item>
+    </string-array>
 
 
 </resources>
