@@ -5,7 +5,8 @@
     <string name="text_email">E-mail</string>
     <string name="text_password">Password</string>
     <string name="text_masuk">LOG IN</string>
-    <string name="text_nama">Nama Panggilan</string>
+    <string name="text_nama_panggilan">Nama Panggilan</string>
+    <string name="text_nama_lengkap">Nama Lengkap</string>
     <string name="text_tanggal">Tanggal Lahir</string>
     <string name="text_jenis">Jenis Kelamin</string>
     <string name="text_landingBawah">Belum Punya Akun?</string>
@@ -86,14 +87,11 @@
     <string name="tv_female">Female</string>
 
 
-
     <string-array name="type_items">
         <item>Select the Type</item>
         <item>Income</item>
         <item>Expenses</item>
     </string-array>
-
-
 
 
 </resources>
