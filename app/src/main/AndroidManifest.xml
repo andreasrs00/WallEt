@@ -53,11 +53,15 @@
         <activity
             android:name=".signupPage"
             android:exported="true"
-            android:theme="@style/Theme.Design.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.Design.Light.NoActionBar">
+
+        </activity>
         <activity
             android:name=".loginPage"
             android:exported="true"
-            android:theme="@style/Theme.Design.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.Design.Light.NoActionBar">
+
+        </activity>
         <activity
             android:name=".loadingScreen"
             android:exported="true"

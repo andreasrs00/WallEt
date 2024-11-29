@@ -40,6 +40,11 @@ class loginPage : AppCompatActivity() {
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         // Navigate to HomePage
+                        val sharedPreferences = getSharedPreferences("USER_SESSION", MODE_PRIVATE)
+                        val editor = sharedPreferences.edit()
+                        editor.putBoolean("IS_LOGGED_IN", true)
+                        editor.apply()
+
                         val intent = Intent(this, HomePage::class.java)
                         startActivity(intent)
                         finish() // Close LoginPage
