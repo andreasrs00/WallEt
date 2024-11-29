@@ -4,19 +4,23 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 
 class loadingScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_loading_screen) // Inflate the layout first
+        setContentView(R.layout.activity_loading_screen)
 
-        // Timer untuk menunda perpindahan halaman
+        val myView = findViewById<View>(R.id.main)
+        myView?.setOnApplyWindowInsetsListener { view, insets ->
+            insets
+        }
+
         Handler(Looper.getMainLooper()).postDelayed({
-            // Pindah ke LandingPage
             val intent = Intent(this, landingPage::class.java)
             startActivity(intent)
-            finish() // Tutup activity loadingScreen agar tidak bisa kembali dengan tombol back
-        }, 500) // 3000 ms = 3 detik
+            finish()
+        }, 500)
     }
 }
