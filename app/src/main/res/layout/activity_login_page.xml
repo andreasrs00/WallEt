@@ -42,6 +42,7 @@
         android:textColor="@color/primary"
         android:layout_marginTop="25dp"
         app:layout_constraintEnd_toEndOf="parent"
+        android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edt_email_login"/>
 
