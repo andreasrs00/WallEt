@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llfaq"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@drawable/border"
+    android:layout_marginTop="20dp"
+    android:gravity="center_horizontal">
+
+    <!-- Question Section -->
+    <LinearLayout
+        android:id="@+id/ll_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:id="@+id/tv_isifaq"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="Apa itu WallEt?"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary" />
+
+        <ImageView
+            android:id="@+id/ivdropdown"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/dropdown"
+            android:layout_gravity="end" />
+    </LinearLayout>
+
+    <!-- Answer Section -->
+    <LinearLayout
+        android:id="@+id/ll_answer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/tv_answer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WallEt adalah aplikasi dompet digital yang memudahkan transaksi keuangan secara online."
+            android:textSize="16sp"
+            android:textColor="@color/primary" />
+    </LinearLayout>
+
+</LinearLayout>

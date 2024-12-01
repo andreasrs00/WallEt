@@ -1,7 +1,9 @@
 package com.example.wallet
 
 import CategoryAdapter
+import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -14,6 +16,13 @@ class activity_sub_categories : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_sub_categories)
+
+        val backarrorw: ImageView = findViewById(R.id.backArrow)
+
+        backarrorw.setOnClickListener {
+            val intent = Intent(this, categories::class.java)
+            startActivity(intent)
+        }
 
         val title = intent.getStringExtra("TITLE")
         val expense = intent.getIntExtra("EXPENSE", 0)
