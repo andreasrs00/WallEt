@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TermsAndCondition">
+
+    <ImageView
+        android:id="@+id/backArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/back_icon"
+        app:layout_constraintTop_toTopOf="@id/tv_terms"
+        app:layout_constraintStart_toStartOf="@id/tv_isiterms"
+        app:layout_constraintBottom_toBottomOf="@id/tv_terms"
+
+
+        />
+
+    <TextView
+        android:id="@+id/tv_terms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Terms Of Service"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/primary"
+        />
+
+    <TextView
+        android:id="@+id/tv_lastupdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Last Update December, 01, 2024"
+        app:layout_constraintStart_toStartOf="@id/tv_terms"
+        app:layout_constraintTop_toBottomOf="@id/tv_terms"
+        app:layout_constraintEnd_toEndOf="@id/tv_terms"
+        android:layout_marginTop="10dp"
+        android:textSize="15sp"
+        android:textColor="@color/green" />
+
+    <TextView
+        android:id="@+id/tv_isiterms"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:text="Dengan mengakses atau menggunakan layanan kami, Anda setuju untuk mematuhi dan terikat oleh syarat dan ketentuan yang tercantum di bawah ini. Jika Anda tidak setuju dengan salah satu bagian dari syarat dan ketentuan ini, Anda dilarang menggunakan layanan kami. Kami berhak untuk memperbarui, mengubah, atau mengganti bagian mana pun dari syarat dan ketentuan ini kapan saja. Anda diharapkan untuk memeriksa halaman ini secara berkala untuk mengetahui perubahan tersebut."
+        app:layout_constraintStart_toStartOf="@id/tv_terms"
+        app:layout_constraintTop_toBottomOf="@id/tv_lastupdate"
+        app:layout_constraintEnd_toEndOf="@id/tv_terms"
+        android:layout_marginTop="20dp"
+        android:textSize="15sp"
+        android:textColor="@color/primary"
+
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

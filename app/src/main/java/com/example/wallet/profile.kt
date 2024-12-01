@@ -1,10 +1,12 @@
 package com.example.wallet
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Typeface
 import android.os.Bundle
 import android.view.Gravity
 import android.view.View
+import android.widget.ImageButton
 import android.widget.TableLayout
 import android.widget.TableRow
 import android.widget.TextView
@@ -93,6 +95,39 @@ class profile : AppCompatActivity() {
         }
         val navbar = findViewById<View>(R.id.navbar)
         NavBarComponent(this, navbar)
+
+        val editprofil: ImageButton = findViewById(R.id.ib_editprofile)
+        val notification: ImageButton = findViewById(R.id.ib_notif)
+        val termsAndCondition: ImageButton = findViewById(R.id.ib_terms)
+        val faq: ImageButton = findViewById(R.id.ib_faq)
+        val theme: ImageButton = findViewById(R.id.ib_theme)
+
+
+        faq.setOnClickListener {
+            val intent = Intent(this, FAQ::class.java)
+            startActivity(intent)
+        }
+
+        theme.setOnClickListener {
+            val intent = Intent(this, Theme::class.java)
+            startActivity(intent)
+        }
+
+        termsAndCondition.setOnClickListener {
+            val intent = Intent(this, TermsAndCondition::class.java)
+            startActivity(intent)
+        }
+
+        editprofil.setOnClickListener {
+            val intent = Intent(this, editprofilePage::class.java)
+            startActivity(intent)
+        }
+
+        notification.setOnClickListener {
+            val intent = Intent(this, notificationPage::class.java)
+            startActivity(intent)
+        }
+
 
     }
 }

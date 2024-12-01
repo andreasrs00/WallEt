@@ -9,7 +9,7 @@
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp">
+    android:padding="10dp">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
@@ -98,6 +98,7 @@
                 tools:ignore="UselessParent">
 
                 <ImageButton
+                    android:id="@+id/ib_editprofile"
                     android:layout_width="110dp"
                     android:layout_height="100dp"
                     android:src="@drawable/group_1042"
@@ -105,16 +106,18 @@
                     tools:ignore="ContentDescription" />
 
                 <ImageButton
+                    android:id="@+id/ib_theme"
                     android:layout_width="110dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/group_1042"
+                    android:src="@drawable/theme"
                     android:background="@color/secondary"
                     tools:ignore="ContentDescription" />
 
                 <ImageButton
+                    android:id="@+id/ib_faq"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:src="@drawable/group_1042"
+                    android:src="@drawable/faq"
                     android:background="@color/secondary"
 
                     tools:ignore="ContentDescription" />
@@ -131,23 +134,25 @@
                 >
 
                 <ImageButton
+                    android:id="@+id/ib_notif"
                     android:layout_width="110dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/group_1042"
+                    android:src="@drawable/notif"
                     android:background="@color/secondary"
                     tools:ignore="ContentDescription" />
 
                 <ImageButton
-                    android:layout_width="110dp"
+                    android:id="@+id/ib_terms"
+                    android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:src="@drawable/group_1042"
+                    android:src="@drawable/group_1059"
                     android:background="@color/secondary"
                     tools:ignore="ContentDescription" />
 
                 <ImageButton
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:src="@drawable/group_1042"
+                    android:src="@drawable/logout"
                     android:background="@color/secondary"
 
                     tools:ignore="ContentDescription" />
@@ -184,13 +189,14 @@
 
         <TableLayout
             android:id="@+id/tabel_layout"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/gray"
             app:layout_constraintTop_toBottomOf="@id/tvtapthetable"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginVertical="50dp"
             android:gravity="center"
             >
 
@@ -203,6 +209,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
     <RelativeLayout
+        android:id="@+id/rl_navbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom">

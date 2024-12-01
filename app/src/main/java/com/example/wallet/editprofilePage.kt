@@ -19,7 +19,7 @@ class editprofilePage : AppCompatActivity() {
             insets
         }
         findViewById<View>(R.id.backArrow).setOnClickListener {
-            val intent = Intent(this, HomePage::class.java)
+            val intent = Intent(this, profile::class.java)
             startActivity(intent)
         }
     }

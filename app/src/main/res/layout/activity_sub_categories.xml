@@ -33,6 +33,7 @@
             />
 
         <ImageView
+            android:id="@+id/backArrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -41,93 +42,90 @@
             />
     </RelativeLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:id="@+id/balance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginHorizontal="20dp"
         app:layout_constraintTop_toBottomOf="@id/containeratas"
-        app:layout_constraintStart_toStartOf="@id/main"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="50dp"
         app:layout_constraintBottom_toTopOf="@id/clcategories"
-        app:layout_constraintEnd_toEndOf="@id/main"
-        >
+        android:padding="16dp"
+        android:background="@drawable/bordercornerwhite"
+        android:weightSum="2">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
 
         <ImageView
             android:id="@+id/iv_income"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/tv_total_balance"
-            app:layout_constraintBottom_toBottomOf="@id/tv_total_balance"
-            app:layout_constraintTop_toTopOf="@id/tv_total_balance"
-            android:src="@drawable/income"
-            android:layout_marginStart="45dp"
-            />
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/income_icon"
+            android:contentDescription="Income Icon" />
 
         <TextView
             android:id="@+id/tv_total_balance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/total_balance"
-            app:layout_constraintStart_toEndOf="@id/iv_income"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginStart="5dp"
-            />
+            android:text="Income"
+            android:textColor="@color/primary"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp" />
 
         <TextView
             android:id="@+id/tv_total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/balance_income"
-            app:layout_constraintStart_toStartOf="@id/iv_income"
-            app:layout_constraintTop_toBottomOf="@id/tv_total_balance"
-            android:textStyle="bold"
-            android:textSize="25sp"
-            android:shadowColor="#000000"
-            android:shadowDx="2"
-            android:shadowDy="2"
-            android:shadowRadius="2"
-            />
+            android:text="Rp 9.000"
+            android:textColor="@color/primary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
 
         <ImageView
             android:id="@+id/iv_expense"
-            android:layout_width="12dp"
-            android:layout_height="12dp"
-
-            app:layout_constraintStart_toEndOf="@id/tv_total_balance"
-            app:layout_constraintTop_toTopOf="@id/tv_total_balance"
-            app:layout_constraintBottom_toBottomOf="@id/tv_total_balance"
-            app:layout_constraintEnd_toEndOf="@id/tv_total_expense"
-            android:src="@drawable/expense"
-
-            />
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/expense_icon"
+            android:contentDescription="Expense Icon" />
 
         <TextView
             android:id="@+id/tv_total_expense"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/total_balance"
-            app:layout_constraintStart_toEndOf="@id/iv_expense"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginStart="5dp"
-            />
+            android:text="Expense"
+            android:textColor="@color/primary"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp" />
 
         <TextView
             android:id="@+id/tv_expense"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/balance_income"
-            app:layout_constraintStart_toStartOf="@id/iv_expense"
-            app:layout_constraintTop_toBottomOf="@id/tv_total_expense"
-            android:textStyle="bold"
-            android:textSize="25sp"
-            android:shadowColor="#000000"
-            android:textColor="@color/red"
-            android:shadowDx="2"
-            android:shadowDy="2"
-            android:shadowRadius="2"
-            />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:text="RP. 1.000"
+            android:textColor="@color/primary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+    </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/clcategories"
@@ -135,16 +133,17 @@
         android:layout_height="500dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/balance"
         app:layout_constraintBottom_toTopOf="@id/containernavbar"
         android:background="@drawable/rounded_top"
         android:padding="20dp"
         android:orientation="vertical"
         android:columnCount="3"
-        android:rowCount="1">
+        android:rowCount="1"
+        android:layout_marginTop="20dp"
+        >
 
         <TextView
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/tvbulan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -167,17 +166,7 @@
 
             app:layout_constraintVertical_bias="1.0"
             tools:layout_editor_absoluteX="24dp" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="Add Expenses"
-        android:paddingHorizontal="20dp"
-        android:background="@drawable/border_corner_categories"
-        android:textColor="@color/secondary"
-        android:textStyle="bold"/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     <RelativeLayout
