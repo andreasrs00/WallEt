@@ -3,8 +3,6 @@ package com.example.wallet
 import android.content.Context
 import android.content.Intent
 import android.view.View
-import android.widget.ImageView
-import android.widget.TextView
 
 class NavBarComponent(context: Context, navbar: View) {
     init {
@@ -27,7 +25,7 @@ class NavBarComponent(context: Context, navbar: View) {
         }
 
         analysisButton.setOnClickListener {
-            val intent = Intent(context, analysisPage::class.java)
+            val intent = Intent(context, AnalysisPage::class.java)
             context.startActivity(intent)
         }
 

@@ -50,12 +50,11 @@ class HomePage : AppCompatActivity() {
 
         val dataSet = BarDataSet(entries, "Total Balance")
         dataSet.color = resources.getColor(android.R.color.black, theme)
-        dataSet.valueTextSize = 12f
+        dataSet.setDrawValues(false)
 
         val data = BarData(dataSet)
         barChart.data = data
 
-        // Label untuk sumbu X
         val months = arrayOf("Jul", "Aug", "Oct", "Dec", "Jan", "Jun")
         val xAxis = barChart.xAxis
         xAxis.valueFormatter = IndexAxisValueFormatter(months)
@@ -64,18 +63,13 @@ class HomePage : AppCompatActivity() {
         xAxis.granularity = 1f
         xAxis.textSize = 12f
 
-
         barChart.axisLeft.textSize = 12f
         barChart.axisLeft.setDrawGridLines(false)
-        dataSet.setDrawValues(false)
         barChart.axisLeft.axisMinimum = 0f
 
         barChart.axisRight.isEnabled = false
         barChart.description.isEnabled = false
         barChart.legend.isEnabled = false
         barChart.animateY(1000)
-
-
     }
-
 }
