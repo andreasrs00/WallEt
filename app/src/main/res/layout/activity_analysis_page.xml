@@ -241,6 +241,23 @@
                     android:layout_height="250dp"
                     android:layout_marginTop="4dp"
                     android:background="@color/secondary" />
+
+                <TextView
+                    android:id="@+id/line_chart_title2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tv_catalog6"
+                    android:textSize="20sp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/montserrat_semi_bold"
+                    android:textColor="@color/primary" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/line_chart2"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@color/secondary" />
             </LinearLayout>
         </ScrollView>
 

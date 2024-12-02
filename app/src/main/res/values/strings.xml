@@ -21,11 +21,11 @@
     <string name="tv_balance_nominal">Rp. 12.000.000</string>
 
     <string name="tv_catalog1">Transaction</string>
-    <string name="tv_catalog2">Financial Db</string>
-    <string name="tv_catalog3">Financial Reports</string>
-    <string name="tv_catalog4">Budgeting</string>
+    <string name="tv_catalog2">Financial Reports</string>
+    <string name="tv_catalog3">Savings Growth</string>
+    <string name="tv_catalog4">Spending Chart</string>
     <string name="tv_catalog5">Investment OVR</string>
-    <string name="tv_catalog6">Debt &amp; Savings</string>
+    <string name="tv_catalog6">Expense Trend</string>
 
     <string name="tv_income">Income</string>
     <string name="tv_expenditure">Expenditure</string>
