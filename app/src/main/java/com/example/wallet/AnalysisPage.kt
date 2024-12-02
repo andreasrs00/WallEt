@@ -2,6 +2,7 @@ package com.example.wallet
 
 import android.graphics.Color
 import android.os.Bundle
+import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -28,6 +29,9 @@ class AnalysisPage : AppCompatActivity() {
         val barChart: BarChart = findViewById(R.id.bar_chart)
         val lineChart: LineChart = findViewById(R.id.line_chart)
         val pieChart: PieChart = findViewById(R.id.pie_chart)
+
+        val navbar = findViewById<View>(R.id.navbar)
+        NavBarComponent(this,navbar)
 
         updateData("Daily", incomeText, expenseText, barChart, lineChart, pieChart)
 

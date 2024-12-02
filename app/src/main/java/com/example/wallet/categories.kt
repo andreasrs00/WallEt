@@ -36,7 +36,6 @@ class categories : AppCompatActivity() {
 
         val tvaddtransaction = findViewById<View>(R.id.add_transaction)
         tvaddtransaction.setOnClickListener {
-            // Pindah ke signUpPage
             val intent = Intent(this, addExpense::class.java)
             startActivity(intent)
         }
