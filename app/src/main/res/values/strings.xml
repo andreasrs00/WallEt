@@ -46,7 +46,11 @@
         <item>Select the category</item>
         <item>Food</item>
         <item>Transport</item>
-        <item>Shopping</item>
+        <item>Medicine</item>
+        <item>Groceries</item>
+        <item>Rent</item>
+        <item>Gift</item>
+        <item>Savings</item>
         <item>Entertainment</item>
     </string-array>
 

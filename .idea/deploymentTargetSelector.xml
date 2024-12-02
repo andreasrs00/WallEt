@@ -25,6 +25,16 @@
         <DialogSelection />
       </SelectionState>
       <SelectionState runConfigName="AnalysisPage">
+      <SelectionState runConfigName="transactionPage">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="AddExpense">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="addExpense">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="loadingScreen">
         <option name="selectionMode" value="DROPDOWN" />
         <DropdownSelection timestamp="2024-12-02T09:47:22.699512400Z">
           <Target type="DEFAULT_BOOT">
