@@ -29,11 +29,12 @@ class AnalysisPage : AppCompatActivity() {
         val barChart: BarChart = findViewById(R.id.bar_chart)
         val lineChart: LineChart = findViewById(R.id.line_chart)
         val pieChart: PieChart = findViewById(R.id.pie_chart)
+        val lineChart2: LineChart = findViewById(R.id.line_chart2)
 
+        updateData("Daily", incomeText, expenseText, barChart, lineChart, pieChart, lineChart2)
+        
         val navbar = findViewById<View>(R.id.navbar)
         NavBarComponent(this,navbar)
-
-        updateData("Daily", incomeText, expenseText, barChart, lineChart, pieChart)
 
         val tabs = listOf(tabDaily, tabWeekly, tabMonthly)
         tabs.forEach { tab ->
@@ -41,9 +42,9 @@ class AnalysisPage : AppCompatActivity() {
                 tabs.forEach { it.isSelected = false }
                 tab.isSelected = true
                 when (tab.id) {
-                    R.id.tab_daily -> updateData("Daily", incomeText, expenseText, barChart, lineChart, pieChart)
-                    R.id.tab_weekly -> updateData("Weekly", incomeText, expenseText, barChart, lineChart, pieChart)
-                    R.id.tab_monthly -> updateData("Monthly", incomeText, expenseText, barChart, lineChart, pieChart)
+                    R.id.tab_daily -> updateData("Daily", incomeText, expenseText, barChart, lineChart, pieChart, lineChart2)
+                    R.id.tab_weekly -> updateData("Weekly", incomeText, expenseText, barChart, lineChart, pieChart, lineChart2)
+                    R.id.tab_monthly -> updateData("Monthly", incomeText, expenseText, barChart, lineChart, pieChart, lineChart2)
                 }
             }
         }
@@ -57,14 +58,16 @@ class AnalysisPage : AppCompatActivity() {
         expenseText: TextView,
         barChart: BarChart,
         lineChart: LineChart,
-        pieChart: PieChart
+        pieChart: PieChart,
+        lineChart2: LineChart
     ) {
         val income: String
         val expense: String
         val barData: List<BarEntry>
         val lineData: List<Entry>
         val pieData: List<PieEntry>
-        val xAxisLabels: List<String> // This will hold the custom X-axis labels
+        val xAxisLabels: List<String>
+        val lineData2: List<Entry>
 
         when (tab) {
             "Daily" -> {
@@ -87,10 +90,20 @@ class AnalysisPage : AppCompatActivity() {
                     Entry(6f, 3200f)
                 )
                 pieData = listOf(
-                    PieEntry(70f, "Income"),
-                    PieEntry(30f, "Expense")
+                    PieEntry(30f, "Food"),
+                    PieEntry(10f, "Transport"),
+                    PieEntry(40f, "Entertaiment"),
+                    PieEntry(20f, "Savings")
                 )
                 xAxisLabels = listOf("", "00:00", "04:00", "08:00", "12:00", "16:00", "20:00")
+                lineData2 = listOf(
+                    Entry(1f, 42700f),
+                    Entry(2f, 56000f),
+                    Entry(3f, 92000f),
+                    Entry(4f, 38000f),
+                    Entry(5f, 50000f),
+                    Entry(6f, 82500f)
+                )
             }
             "Weekly" -> {
                 income = "Rp 63.000"
@@ -114,10 +127,21 @@ class AnalysisPage : AppCompatActivity() {
                     Entry(7f, 20000f)
                 )
                 pieData = listOf(
-                    PieEntry(50f, "Income"),
-                    PieEntry(50f, "Expense")
+                    PieEntry(10f, "Food"),
+                    PieEntry(40f, "Transport"),
+                    PieEntry(20f, "Entertaiment"),
+                    PieEntry(30f, "Savings")
                 )
                 xAxisLabels = listOf("-", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" , "Sun")
+                lineData2 = listOf(
+                    Entry(1f, 47500f),
+                    Entry(2f, 60200f),
+                    Entry(3f, 120000f),
+                    Entry(4f, 55000f),
+                    Entry(5f, 62000f),
+                    Entry(6f, 80000f),
+                    Entry(7f, 92000f)
+                )
             }
             "Monthly" -> {
                 income = "Rp 270.000"
@@ -126,21 +150,27 @@ class AnalysisPage : AppCompatActivity() {
                     BarEntry(1f, 45000f), // Month 1
                     BarEntry(2f, 50000f), // Month 2
                     BarEntry(3f, 55000f), // Month 3
-                    BarEntry(4f, 60000f), // Month 4
-                    BarEntry(5f, 70000f)  // Month 5
+                    BarEntry(4f, 60000f) // Month 4
                 )
                 lineData = listOf(
                     Entry(1f, 45000f),
                     Entry(2f, 50000f),
                     Entry(3f, 55000f),
-                    Entry(4f, 60000f),
-                    Entry(5f, 70000f)
+                    Entry(4f, 60000f)
                 )
                 pieData = listOf(
-                    PieEntry(90f, "Income"),
-                    PieEntry(10f, "Expense")
+                    PieEntry(50f, "Food"),
+                    PieEntry(15f, "Transport"),
+                    PieEntry(20f, "Entertaiment"),
+                    PieEntry(15f, "Savings")
                 )
-                xAxisLabels = listOf("", "Month 1", "Month 2", "Month 3", "Month 4", "Month 5")
+                xAxisLabels = listOf("-", "Week 1", "Week 2", "Week 3", "Week 4", "Week 5")
+                lineData2 = listOf(
+                    Entry(1f, 24000f),
+                    Entry(2f, 52000f),
+                    Entry(3f, 32000f),
+                    Entry(4f, 72000f)
+                )
             }
             else -> return
         }
@@ -150,11 +180,9 @@ class AnalysisPage : AppCompatActivity() {
 
         val customTypeface = ResourcesCompat.getFont(this, R.font.montserrat_medium)
 
-        // Bar chart setup
         val barDataSet = BarDataSet(barData, "Income")
         barDataSet.color = Color.BLACK
         val barDataObject = BarData(barDataSet)
-//        barChart.xAxis.granularity = 1f
         barDataSet.valueTypeface = customTypeface
         barDataObject.barWidth = 0.5f
         barChart.data = barDataObject
@@ -173,8 +201,7 @@ class AnalysisPage : AppCompatActivity() {
 
         barChart.xAxis.valueFormatter = IndexAxisValueFormatter(xAxisLabels)
 
-        // Line chart setup
-        val lineDataSet = LineDataSet(lineData, "Income Trend")
+        val lineDataSet = LineDataSet(lineData, "Savings Trend")
         lineDataSet.color = Color.BLACK
         lineDataSet.valueTypeface = customTypeface
         lineDataSet.setCircleColor(Color.BLACK)
@@ -193,14 +220,14 @@ class AnalysisPage : AppCompatActivity() {
         lineChart.axisRight.isEnabled = false
         lineChart.animateY(1500)
 
-        // Set custom X-axis labels for line chart
         lineChart.xAxis.valueFormatter = IndexAxisValueFormatter(xAxisLabels)
 
-        // Pie chart setup
         val pieDataSet = PieDataSet(pieData, "").apply {
             colors = listOf(
-                ContextCompat.getColor(this@AnalysisPage, R.color.green),
-                ContextCompat.getColor(this@AnalysisPage, R.color.red)
+                ContextCompat.getColor(this@AnalysisPage, R.color.blue),
+                ContextCompat.getColor(this@AnalysisPage, R.color.orange),
+                ContextCompat.getColor(this@AnalysisPage, R.color.pink),
+                ContextCompat.getColor(this@AnalysisPage, R.color.green)
             )
             setSliceSpace(5f)
             valueTypeface = customTypeface
@@ -220,7 +247,6 @@ class AnalysisPage : AppCompatActivity() {
             legend.isEnabled = true
             legend.textSize = 14f
             description.isEnabled = false
-            centerText = "Budgeting"
             setCenterTextColor(Color.BLACK)
             setCenterTextSize(12f)
             isDrawHoleEnabled = true
@@ -229,5 +255,26 @@ class AnalysisPage : AppCompatActivity() {
             animateY(1500)
             animateX(1500)
         }
+
+        val lineDataSet2 = LineDataSet(lineData2, "Expense Trend")
+        lineDataSet2.color = Color.BLACK
+        lineDataSet2.valueTypeface = customTypeface
+        lineDataSet2.setCircleColor(Color.BLACK)
+        lineChart2.data = LineData(lineDataSet2)
+        lineChart2.description.isEnabled = false
+        lineChart2.legend.isEnabled = false
+        lineChart2.xAxis.position = XAxis.XAxisPosition.BOTTOM
+        lineChart2.xAxis.granularity = 1f
+        lineChart2.xAxis.textSize = 12f
+        lineChart2.axisLeft.textSize = 12f
+        lineChart2.invalidate()
+        lineDataSet2.setDrawValues(false)
+        lineChart2.xAxis.setDrawGridLines(false)
+        lineChart2.axisRight.setDrawGridLines(false)
+        lineChart2.axisLeft.setDrawGridLines(false)
+        lineChart2.axisRight.isEnabled = false
+        lineChart2.animateY(1500)
+
+        lineChart2.xAxis.valueFormatter = IndexAxisValueFormatter(xAxisLabels)
     }
 }
