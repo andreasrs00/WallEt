@@ -14,7 +14,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.text.NumberFormat
@@ -114,7 +113,7 @@ class addExpense : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // Convert date string to Timestamp
+            // Convert date string to desired format
             val dateParsed = try {
                 dateFormat.parse(date)
             } catch (e: ParseException) {
@@ -124,7 +123,9 @@ class addExpense : AppCompatActivity() {
                 Toast.makeText(this, "Invalid date format", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            val timestamp = Timestamp(dateParsed)
+
+            // Format the date as a string
+            val formattedDate = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(dateParsed)
 
             // Get user ID
             val userId = auth.currentUser?.uid
@@ -141,7 +142,7 @@ class addExpense : AppCompatActivity() {
             val transactionData = hashMapOf(
                 "Amount" to amount, // Number
                 "Category" to categorySpinner.selectedItem.toString(), // String
-                "Date" to timestamp, // Timestamp
+                "Date" to formattedDate, // String
                 "Expense Title" to title, // String
                 "Type" to transactionType // String
             )
@@ -151,11 +152,11 @@ class addExpense : AppCompatActivity() {
 
             // Save to Firestore under the user's UID in 'transactions'
             firestore.collection("Transaction")
-                .document(userId) // Main document is the user's UID
-                .collection("categories") // Sub-collection for categories
-                .document(categorySpinner.selectedItem.toString()) // Document for specific category
-                .collection(transactionType.lowercase()) // Sub-collection for income or expense
-                .add(transactionData) // Add the transaction
+                .document(userId)
+                .collection("categories")
+                .document(categorySpinner.selectedItem.toString())
+                .collection(transactionType.lowercase())
+                .add(transactionData)
                 .addOnSuccessListener {
                     Toast.makeText(this, "Transaction saved successfully", Toast.LENGTH_SHORT).show()
                     navigateToCategories()

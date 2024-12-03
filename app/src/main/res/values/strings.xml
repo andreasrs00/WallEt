@@ -94,7 +94,7 @@
     <string-array name="type_items">
         <item>Select the Type</item>
         <item>Income</item>
-        <item>Expenses</item>
+        <item>Expense</item>
     </string-array>
 
 
