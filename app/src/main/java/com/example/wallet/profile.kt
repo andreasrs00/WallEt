@@ -10,10 +10,13 @@ import android.widget.ImageButton
 import android.widget.TableLayout
 import android.widget.TableRow
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class profile : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -21,15 +24,42 @@ class profile : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
+        val firestore = FirebaseFirestore.getInstance()
+        val auth = FirebaseAuth.getInstance()
+
+        // Ambil UID pengguna yang sedang login
+        val userId = auth.currentUser?.uid
+
+        // Ambil data pengguna dari Firestore
+        if (userId != null) {
+            firestore.collection("users").document(userId).get()
+                .addOnSuccessListener { document ->
+                    if (document != null) {
+                        // Ambil data firstname dan lastname dari Firestore
+                        val firstName = document.getString("name")
+                        val lastName = document.getString("fullName")
+
+                        // Tampilkan data pada TextView
+                        val tvFirstName: TextView = findViewById(R.id.tvfirstname)
+                        val tvLastName: TextView = findViewById(R.id.tvlastname)
+
+                        tvFirstName.text = firstName ?: "Nama Depan Tidak Tersedia"
+                        tvLastName.text = lastName ?: "Nama Belakang Tidak Tersedia"
+                    }
+                }
+                .addOnFailureListener { exception ->
+                    Toast.makeText(this, "Gagal mengambil data pengguna: ${exception.message}", Toast.LENGTH_SHORT).show()
+                }
+        }
+
+        // Atur padding untuk insets
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { view, insets ->
             val systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            // Gunakan padding XML sebagai dasar
             val defaultPaddingLeft = view.paddingLeft
             val defaultPaddingTop = view.paddingTop
             val defaultPaddingRight = view.paddingRight
             val defaultPaddingBottom = view.paddingBottom
 
-            // Tambahkan padding dari WindowInsets
             view.setPadding(
                 defaultPaddingLeft + systemBarsInsets.left,
                 defaultPaddingTop + systemBarsInsets.top,
@@ -39,6 +69,7 @@ class profile : AppCompatActivity() {
             WindowInsetsCompat.CONSUMED
         }
 
+        // Data untuk tabel
         val data = listOf(
             listOf("Tanggal", "Keterangan", "Pemasukan", "Pengeluaran"),
             listOf("2 Maret 2024", "Gaji", "5,000,000", "-"),
@@ -51,11 +82,11 @@ class profile : AppCompatActivity() {
 
         val tableLayout: TableLayout = findViewById(R.id.tabel_layout)
 
-// Iterasi melalui setiap baris data
+        // Iterasi melalui data dan buat tabel
         for ((index, row) in data.withIndex()) {
             val tableRow = TableRow(this)
 
-            // Atur latar belakang untuk header
+            // Tambahkan latar belakang untuk header
             if (index == 0) {
                 tableRow.setBackgroundColor(ContextCompat.getColor(this, R.color.light_gray))
             }
@@ -63,24 +94,23 @@ class profile : AppCompatActivity() {
             for (cell in row) {
                 val textView = TextView(this)
                 textView.text = cell
-                textView.setPadding(16, 16, 16, 16) // Padding dalam dp
+                textView.setPadding(16, 16, 16, 16)
                 textView.layoutParams = TableRow.LayoutParams(
                     TableRow.LayoutParams.WRAP_CONTENT,
                     TableRow.LayoutParams.WRAP_CONTENT
                 )
 
-                // Atur gaya teks untuk header
                 if (index == 0) {
-                    textView.setTypeface(null, Typeface.BOLD) // Teks tebal untuk header
+                    textView.setTypeface(null, Typeface.BOLD)
                     textView.gravity = Gravity.CENTER
                 } else {
-                    textView.gravity = Gravity.START // Rata kiri untuk data
+                    textView.gravity = Gravity.START
                 }
 
                 tableRow.addView(textView)
             }
 
-            // Tambahkan garis pembatas di bawah setiap baris
+            // Tambahkan pembatas
             val divider = View(this)
             divider.layoutParams = TableLayout.LayoutParams(
                 TableLayout.LayoutParams.MATCH_PARENT,
@@ -90,18 +120,20 @@ class profile : AppCompatActivity() {
 
             tableLayout.addView(tableRow)
             if (index != data.size - 1) {
-                tableLayout.addView(divider) // Jangan tambahkan garis pembatas di baris terakhir
+                tableLayout.addView(divider)
             }
         }
+
         val navbar = findViewById<View>(R.id.navbar)
         NavBarComponent(this, navbar)
 
+        // Tombol lain
         val editprofil: ImageButton = findViewById(R.id.ib_editprofile)
         val notification: ImageButton = findViewById(R.id.ib_notif)
         val termsAndCondition: ImageButton = findViewById(R.id.ib_terms)
         val faq: ImageButton = findViewById(R.id.ib_faq)
         val theme: ImageButton = findViewById(R.id.ib_theme)
-
+        val logoutButton: ImageButton = findViewById(R.id.ib_logout)
 
         faq.setOnClickListener {
             val intent = Intent(this, FAQ::class.java)
@@ -128,6 +160,20 @@ class profile : AppCompatActivity() {
             startActivity(intent)
         }
 
+        logoutButton.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
 
+            val sharedPreferences = getSharedPreferences("USER_SESSION", MODE_PRIVATE)
+            val editor = sharedPreferences.edit()
+            editor.putBoolean("IS_LOGGED_IN", false)
+            editor.apply()
+
+            Toast.makeText(this, "Logout berhasil!", Toast.LENGTH_SHORT).show()
+
+
+            val intent = Intent(this, landingPage::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 }

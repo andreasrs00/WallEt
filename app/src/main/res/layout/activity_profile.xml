@@ -150,11 +150,11 @@
                     tools:ignore="ContentDescription" />
 
                 <ImageButton
+                    android:id="@+id/ib_logout"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:src="@drawable/logout"
                     android:background="@color/secondary"
-
                     tools:ignore="ContentDescription" />
 
             </LinearLayout>
