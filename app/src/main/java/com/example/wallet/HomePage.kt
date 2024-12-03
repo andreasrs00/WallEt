@@ -2,6 +2,7 @@ package com.example.wallet
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -15,6 +16,10 @@ import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import android.view.View
 import android.widget.RelativeLayout
+import android.widget.TextView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import java.text.DecimalFormat
 
 
 class HomePage : AppCompatActivity() {
@@ -36,6 +41,59 @@ class HomePage : AppCompatActivity() {
         }
         val navbar = findViewById<View>(R.id.navbar)
         NavBarComponent(this,navbar)
+
+        val jenisKategori = listOf("Entertainment", "Food", "Gift", "Groceries", "Medicine", "Rent", "Savings", "Transport")
+
+        fun formatCurrency(amount: Long): String {
+            val formatter = DecimalFormat("#,###")
+            return "Rp ${formatter.format(amount)}"
+        }
+
+        val expenseTextView = findViewById<TextView>(R.id.tv_total_expense)
+        val incomeTextView = findViewById<TextView>(R.id.tv_total_income)
+
+
+        val db = FirebaseFirestore.getInstance()
+        val auth = FirebaseAuth.getInstance()
+        val userID = auth.currentUser?.uid
+
+        var income: Long = 0
+        var expense: Long = 0
+
+        if (userID != null) {
+            for (kategori in jenisKategori) {
+                val documentRef = db.collection("Transaction")
+                    .document(userID)
+                    .collection("categories")
+                    .document(kategori)
+
+                listOf("expense", "income").forEach { type ->
+                    documentRef.collection(type)
+                        .get()
+                        .addOnSuccessListener { snapshot ->
+                            if (snapshot != null && !snapshot.isEmpty) {
+                                for (document in snapshot.documents) {
+                                    val uang = document.getLong("Amount") ?: 0L
+
+                                    if (type == "income") {
+                                        income += uang
+                                    } else if (type == "expense") {
+                                        expense += uang
+                                    }
+                                }
+
+                                expenseTextView.text = formatCurrency(expense)
+                                incomeTextView.text = formatCurrency(income)
+                            }
+                        }
+                        .addOnFailureListener { exception ->
+                            Log.e("FirestoreError", "Error getting $type data for $kategori: ", exception)
+                        }
+                }
+            }
+        } else {
+            Log.e("FirestoreError", "User ID is null.")
+        }
 
         val barChart = findViewById<BarChart>(R.id.barChart)
 
@@ -72,4 +130,5 @@ class HomePage : AppCompatActivity() {
         barChart.legend.isEnabled = false
         barChart.animateY(1000)
     }
+
 }

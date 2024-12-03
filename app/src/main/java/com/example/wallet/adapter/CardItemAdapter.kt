@@ -26,8 +26,8 @@ class CardItemAdapter(private val itemList: List<CardItem>) :
 
     override fun onBindViewHolder(holder: CardItemViewHolder, position: Int) {
         val currentItem = itemList[position]
-        holder.icon.setImageResource(currentItem.iconResId)
-        holder.title.text = currentItem.title
+        holder.icon.setImageResource(currentItem.icon)
+        holder.title.text = currentItem.name
         holder.amount.text = currentItem.amount
     }
 

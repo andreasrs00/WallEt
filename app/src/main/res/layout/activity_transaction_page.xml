@@ -99,7 +99,7 @@
                     android:textSize="14sp" />
 
                 <TextView
-                    android:id="@+id/income_amount"
+                    android:id="@+id/tv_total_income"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/tv_balance_nominal"
@@ -131,7 +131,7 @@
                     android:textSize="14sp" />
 
                 <TextView
-                    android:id="@+id/expense_amount"
+                    android:id="@+id/tv_total_expense"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/tv_balance_nominal"
@@ -170,7 +170,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <FrameLayout
             android:id="@+id/container"
