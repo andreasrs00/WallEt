@@ -16,6 +16,7 @@ class CardItemAdapter(private val itemList: List<CardItem>) :
         val icon: ImageView = itemView.findViewById(R.id.transaction_icon)
         val title: TextView = itemView.findViewById(R.id.transaction_title)
         val amount: TextView = itemView.findViewById(R.id.transaction_amount)
+        val date: TextView = itemView.findViewById(R.id.transaction_date)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardItemViewHolder {
@@ -29,6 +30,7 @@ class CardItemAdapter(private val itemList: List<CardItem>) :
         holder.icon.setImageResource(currentItem.icon)
         holder.title.text = currentItem.name
         holder.amount.text = currentItem.amount
+        holder.date.text = currentItem.date
     }
 
     override fun getItemCount(): Int = itemList.size

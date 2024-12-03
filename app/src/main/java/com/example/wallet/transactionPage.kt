@@ -110,15 +110,14 @@ class transactionPage : AppCompatActivity() {
                                         val amount = document.getLong("Amount") ?: return@mapNotNull null
                                         val dateString = document.getString("Date") ?: return@mapNotNull null
                                         val expenseTitle = document.getString("Expense Title") ?: return@mapNotNull null
-
-                                        // Memeriksa apakah tanggal sesuai dengan bulan yang sedang diiterasi
-                                        val dateMonth = dateString.split("-")[1].toIntOrNull() // Ambil bulan dari "YYYY-MM-DD"
-                                        if (dateMonth == index + 1) { // Cocokkan bulan (index + 1 karena Januari = 1)
+                                        val dateMonth = dateString.split("-")[1].toIntOrNull()
+                                        if (dateMonth == index + 1) {
                                             CardItem(
-                                                name = category, // Menggunakan nama kategori
-                                                type = expenseTitle, // Expense Title sebagai deskripsi
+                                                name = category,
+                                                type = expenseTitle,
                                                 amount = formatCurrency(amount),
-                                                icon = getDrawableId(category.toLowerCase())
+                                                icon = getDrawableId(category.toLowerCase(Locale.ROOT)),
+                                                date = dateString
                                             )
                                         } else {
                                             null
