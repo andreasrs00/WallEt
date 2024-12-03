@@ -82,7 +82,7 @@
                 android:layout_marginTop="8dp" />
 
             <TextView
-                android:id="@+id/tv_total"
+                android:id="@+id/tv_total_income"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rp 9.000"
@@ -106,7 +106,7 @@
                 android:contentDescription="Expense Icon" />
 
             <TextView
-                android:id="@+id/tv_total_expense"
+                android:id="@+id/tv_tulisan_expense"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Expense"
@@ -116,7 +116,7 @@
                 android:layout_marginTop="8dp" />
 
             <TextView
-                android:id="@+id/tv_expense"
+                android:id="@+id/tv_total_expense"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="RP. 1.000"

@@ -1,8 +1,8 @@
 package com.example.wallet.model
 
 data class CardItem(
-    val title: String,
-    val category: String,
+    val name: String,
+    val type: String,
     val amount: String,
-    val iconResId: Int
+    val icon: Int
 )
