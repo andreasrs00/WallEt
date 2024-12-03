@@ -6,435 +6,439 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main">
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:background="@color/gray"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".HomePage"
-    android:padding="20dp">
-    <TextView
-        android:id="@+id/tv_hello"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/gray"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".HomePage"
+        android:padding="20dp">
+        <TextView
+            android:id="@+id/tv_hello"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_hello"
+            android:fontFamily="@font/montserrat_regular"
+            android:textSize="32sp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <ImageView
+            android:id="@+id/img_profile"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/circular_image"
+            android:src="@drawable/profile_user"
+            android:scaleType="centerCrop"
+            android:cropToPadding="true"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_atas_home_page"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tv_hello"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/border_home"
+            android:padding="12dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:id="@+id/container_text_balance"
+                app:layout_constraintTop_toTopOf="parent">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tv_balance"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textSize="20sp"
+                    android:layout_weight="1" />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:background="@android:color/transparent"
+                    android:text="@string/tv_show_more"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textSize="16sp"
+                    android:textAllCaps="false"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/tv_balance_nominal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="32sp"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:text="@string/tv_balance_nominal"
+                app:layout_constraintTop_toBottomOf="@+id/container_text_balance"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/barChart"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintTop_toBottomOf="@+id/tv_balance_nominal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/catalog_home_page"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/container_atas_home_page"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/border_home"
+            android:padding="12dp">
+
+            <LinearLayout
+                android:id="@+id/container1_catalog_home_page"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:orientation="horizontal"
+                android:weightSum="3">
+                <LinearLayout
+                    android:id="@+id/transaction"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_weight="1"
+                    >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/hand_money_icon"
+                        android:layout_margin="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tv_catalog1"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:layout_marginTop="0dp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ll_financialreport"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/broken_chart_icon"
+                        android:layout_margin="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tv_catalog2"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:layout_marginTop="0dp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ll_saving_growth"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/money_icon"
+                        android:layout_margin="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tv_catalog3"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:layout_marginTop="0dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container2_catalog_home_page"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/container1_catalog_home_page"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="8dp"
+                android:weightSum="3">
+                <LinearLayout
+                    android:id="@+id/ll_spending_chart"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/dollar_icon"
+                        android:layout_margin="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tv_catalog4"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:layout_marginTop="0dp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ll_investment"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/course_up_icon"
+                        android:layout_margin="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tv_catalog5"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:layout_marginTop="0dp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ll_expend_growth"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/saving_icon"
+                        android:layout_margin="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tv_catalog6"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:layout_marginTop="0dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/info_transaction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/catalog_home_page"
+            android:gravity="center"
+            android:weightSum="2"
+            android:layout_marginTop="12dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/income_home_page"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:background="@drawable/border_home"
+                android:layout_weight="1"
+                android:padding="12dp"
+                android:orientation="horizontal"
+                android:layout_marginEnd="20dp">
+                <TextView
+                    android:id="@+id/tv_income"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="@string/tv_income"
+                    android:textColor="@color/green"
+                    android:textSize="16sp"/>
+                <TextView
+                    android:id="@+id/tv_total_income"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/tv_income"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:textSize="20sp"
+                    android:text="@string/tv_balance_nominal"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/expenditure_home_page"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:background="@drawable/border_home"
+                android:layout_weight="1"
+                android:padding="12dp">
+                <TextView
+                    android:id="@+id/tv_expenditure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="@string/tv_expenditure"
+                    android:textColor="@color/red"
+                    android:textSize="16sp"/>
+                <TextView
+                    android:id="@+id/tv_total_expense"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/tv_expenditure"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:textSize="20sp"
+                    android:text="@string/tv_balance_nominal"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/news_app"
+            android:foregroundGravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/info_transaction"
+            android:layout_marginTop="12dp"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:id="@+id/news_app_catalog1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="160dp"
+                    android:background="@drawable/border_home"
+                    android:orientation="horizontal"
+                    android:layout_marginEnd="20dp">
+                    <TextView
+                        android:layout_width="107dp"
+                        android:layout_height="match_parent"
+                        android:text="@string/tv_news_app_catalog1"
+                        android:gravity="center"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textSize="18sp"
+                        android:padding="12dp"/>
+                    <ImageView
+                        android:layout_width="140dp"
+                        android:layout_height="160dp"
+                        android:src="@drawable/image_growth_coin" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/news_app_catalog2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="160dp"
+                    android:background="@drawable/border_home"
+                    android:orientation="horizontal"
+                    android:layout_marginEnd="20dp">
+                    <TextView
+                        android:layout_width="107dp"
+                        android:layout_height="match_parent"
+                        android:text="@string/tv_news_app_catalog2"
+                        android:gravity="center"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textSize="18sp"
+                        android:padding="12dp"
+                        />
+                    <ImageView
+                        android:layout_width="140dp"
+                        android:layout_height="160dp"
+                        android:src="@drawable/image_portfolio_diversity" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/news_app_catalog3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="160dp"
+                    android:background="@drawable/border_home"
+                    android:orientation="horizontal"
+                    android:layout_marginEnd="20dp">
+                    <TextView
+                        android:layout_width="107dp"
+                        android:layout_height="match_parent"
+                        android:text="@string/tv_news_app_catalog3"
+                        android:gravity="center"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textSize="18sp"
+                        />
+                    <ImageView
+                        android:layout_width="140dp"
+                        android:layout_height="160dp"
+                        android:src="@drawable/image_crypto_tech" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/news_app_catalog4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="160dp"
+                    android:background="@drawable/border_home"
+                    android:orientation="horizontal"
+                    >
+                    <TextView
+                        android:layout_width="107dp"
+                        android:layout_height="match_parent"
+                        android:text="@string/tv_news_app_catalog4"
+                        android:gravity="center"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textSize="18sp" />
+                    <ImageView
+                        android:layout_width="140dp"
+                        android:layout_height="160dp"
+                        android:src="@drawable/image_financial_goals" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:id="@id/containernavbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/tv_hello"
-        android:fontFamily="@font/montserrat_regular"
-        android:textSize="32sp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-    <ImageView
-        android:id="@+id/img_profile"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/circular_image"
-        android:src="@drawable/profile_user"
-        android:scaleType="centerCrop"
-        android:cropToPadding="true"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/container_atas_home_page"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/tv_hello"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/border_home"
-        android:padding="12dp">
-        <LinearLayout
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_gravity="bottom"
+        tools:ignore="MissingConstraints">
+
+        <FrameLayout
+            android:id="@+id/container"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:id="@+id/container_text_balance"
-            app:layout_constraintTop_toTopOf="parent">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/tv_balance"
-                android:fontFamily="@font/montserrat_regular"
-                android:textSize="20sp"
-                android:layout_weight="1" />
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="32dp"
-                android:background="@android:color/transparent"
-                android:text="@string/tv_show_more"
-                android:fontFamily="@font/montserrat_regular"
-                android:textSize="16sp"
-                android:textAllCaps="false"/>
-        </LinearLayout>
-        <TextView
-            android:id="@+id/tv_balance_nominal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="32sp"
-            android:fontFamily="@font/montserrat_semi_bold"
-            android:text="@string/tv_balance_nominal"
-            app:layout_constraintTop_toBottomOf="@+id/container_text_balance"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <com.github.mikephil.charting.charts.BarChart
-            android:id="@+id/barChart"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginBottom="4dp"
-            app:layout_constraintTop_toBottomOf="@+id/tv_balance_nominal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/catalog_home_page"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/container_atas_home_page"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/border_home"
-        android:padding="12dp">
-
-        <LinearLayout
-            android:id="@+id/container1_catalog_home_page"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:orientation="horizontal"
-            android:weightSum="3">
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_weight="1"
-                >
-                 <ImageView
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:src="@drawable/hand_money_icon"
-                     android:layout_margin="0dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/tv_catalog1"
-                    android:textSize="12sp"
-                    android:fontFamily="@font/montserrat_regular"
-                    android:layout_marginTop="0dp" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_weight="1">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/broken_chart_icon"
-                    android:layout_margin="0dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/tv_catalog2"
-                    android:textSize="12sp"
-                    android:fontFamily="@font/montserrat_regular"
-                    android:layout_marginTop="0dp" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_weight="1">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/money_icon"
-                    android:layout_margin="0dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/tv_catalog3"
-                    android:textSize="12sp"
-                    android:fontFamily="@font/montserrat_regular"
-                    android:layout_marginTop="0dp" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/container2_catalog_home_page"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@id/container1_catalog_home_page"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="8dp"
-            android:weightSum="3">
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_weight="1">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/dollar_icon"
-                    android:layout_margin="0dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/tv_catalog4"
-                    android:textSize="12sp"
-                    android:fontFamily="@font/montserrat_regular"
-                    android:layout_marginTop="0dp" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_weight="1">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/course_up_icon"
-                    android:layout_margin="0dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/tv_catalog5"
-                    android:textSize="12sp"
-                    android:fontFamily="@font/montserrat_regular"
-                    android:layout_marginTop="0dp" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_weight="1">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/saving_icon"
-                    android:layout_margin="0dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/tv_catalog6"
-                    android:textSize="12sp"
-                    android:fontFamily="@font/montserrat_regular"
-                    android:layout_marginTop="0dp" />
-            </LinearLayout>
-        </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <LinearLayout
-        android:id="@+id/info_transaction"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/catalog_home_page"
-        android:gravity="center"
-        android:weightSum="2"
-        android:layout_marginTop="12dp">
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/income_home_page"
-            android:layout_width="0dp"
-            android:layout_height="76dp"
-            android:background="@drawable/border_home"
-            android:layout_weight="1"
-            android:padding="12dp"
-            android:orientation="horizontal"
-            android:layout_marginEnd="20dp">
-            <TextView
-                android:id="@+id/tv_income"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                android:text="@string/tv_income"
-                android:textColor="@color/green"
-                android:textSize="16sp"/>
-            <TextView
-                android:id="@id/tv_total_income"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/tv_income"
-                app:layout_constraintStart_toStartOf="parent"
-                android:textSize="20sp"
-                android:text="@string/tv_balance_nominal"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/expenditure_home_page"
-            android:layout_width="0dp"
-            android:layout_height="76dp"
-            android:background="@drawable/border_home"
-            android:layout_weight="1"
-            android:padding="12dp">
-            <TextView
-                android:id="@+id/tv_expenditure"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                android:text="@string/tv_expenditure"
-                android:textColor="@color/red"
-                android:textSize="16sp"/>
-            <TextView
-                android:id="@id/tv_total_expense"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/tv_expenditure"
-                app:layout_constraintStart_toStartOf="parent"
-                android:textSize="20sp"
-                android:text="@string/tv_balance_nominal"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </LinearLayout>
-
-    <HorizontalScrollView
-        android:id="@+id/news_app"
-        android:foregroundGravity="center_vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/info_transaction"
-        android:layout_marginTop="12dp"
-        >
-        <LinearLayout
-            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:foregroundGravity="center"
-            android:gravity="center"
-            android:orientation="horizontal">
-            <LinearLayout
-                android:id="@+id/news_app_catalog1"
-                android:layout_width="wrap_content"
-                android:layout_height="160dp"
-                android:background="@drawable/border_home"
-                android:orientation="horizontal"
-                android:layout_marginEnd="20dp">
-                <TextView
-                    android:layout_width="107dp"
-                    android:layout_height="match_parent"
-                    android:text="@string/tv_news_app_catalog1"
-                    android:gravity="center"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textSize="18sp"
-                    android:padding="12dp"/>
-                <ImageView
-                    android:layout_width="140dp"
-                    android:layout_height="160dp"
-                    android:src="@drawable/image_growth_coin" />
+            android:layout_above="@id/navbar" />
 
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/news_app_catalog2"
-                android:layout_width="wrap_content"
-                android:layout_height="160dp"
-                android:background="@drawable/border_home"
-                android:orientation="horizontal"
-                android:layout_marginEnd="20dp">
-                <TextView
-                    android:layout_width="107dp"
-                    android:layout_height="match_parent"
-                    android:text="@string/tv_news_app_catalog2"
-                    android:gravity="center"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textSize="18sp"
-                    android:padding="12dp"
-                    />
-                <ImageView
-                    android:layout_width="140dp"
-                    android:layout_height="160dp"
-                    android:src="@drawable/image_portfolio_diversity" />
+        <include
+            layout="@layout/navbar"
+            android:id="@+id/navbar"/>
 
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/news_app_catalog3"
-                android:layout_width="wrap_content"
-                android:layout_height="160dp"
-                android:background="@drawable/border_home"
-                android:orientation="horizontal"
-                android:layout_marginEnd="20dp">
-                <TextView
-                    android:layout_width="107dp"
-                    android:layout_height="match_parent"
-                    android:text="@string/tv_news_app_catalog3"
-                    android:gravity="center"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textSize="18sp"
-                    />
-                <ImageView
-                    android:layout_width="140dp"
-                    android:layout_height="160dp"
-                    android:src="@drawable/image_crypto_tech" />
-
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/news_app_catalog4"
-                android:layout_width="wrap_content"
-                android:layout_height="160dp"
-                android:background="@drawable/border_home"
-                android:orientation="horizontal"
-                >
-                <TextView
-                    android:layout_width="107dp"
-                    android:layout_height="match_parent"
-                    android:text="@string/tv_news_app_catalog4"
-                    android:gravity="center"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textSize="18sp" />
-                <ImageView
-                    android:layout_width="140dp"
-                    android:layout_height="160dp"
-                    android:src="@drawable/image_financial_goals" />
-
-            </LinearLayout>
-        </LinearLayout>
-    </HorizontalScrollView>
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
-<RelativeLayout
-android:id="@id/containernavbar"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-app:layout_constraintBottom_toBottomOf="parent"
-android:layout_gravity="bottom"
-tools:ignore="MissingConstraints">
-
-<FrameLayout
-    android:id="@+id/container"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_above="@id/navbar" />
-
-<include
-    layout="@layout/navbar"
-    android:id="@+id/navbar"/>
-
-</RelativeLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
-
-

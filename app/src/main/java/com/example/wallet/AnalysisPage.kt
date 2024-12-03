@@ -3,6 +3,7 @@ package com.example.wallet
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
+import android.widget.ScrollView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -35,6 +36,24 @@ class AnalysisPage : AppCompatActivity() {
         
         val navbar = findViewById<View>(R.id.navbar)
         NavBarComponent(this,navbar)
+
+        val scroll: ScrollView = findViewById(R.id.scroll_analysis)
+        val scrollTo = intent.getStringExtra("scroll_to")
+        scrollTo?.let {
+            val targetView: View? = when (it) {
+                "line_chart_title" -> findViewById(R.id.line_chart_title)
+                "pie_chart_title" -> findViewById(R.id.pie_chart_title)
+                "line_chart_title2" -> findViewById(R.id.line_chart_title2)
+                else -> null
+            }
+
+            targetView?.let { view ->
+                // Scroll secara halus ke view yang ditargetkan
+                scroll.post {
+                    scroll.smoothScrollTo(0, view.top)
+                }
+            }
+        }
 
         val tabs = listOf(tabDaily, tabWeekly, tabMonthly)
         tabs.forEach { tab ->

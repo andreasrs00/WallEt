@@ -4,5 +4,6 @@ data class CardItem(
     val name: String,
     val type: String,
     val amount: String,
-    val icon: Int
+    val icon: Int,
+    val date : String
 )
