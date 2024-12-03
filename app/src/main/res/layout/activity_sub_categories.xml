@@ -52,7 +52,6 @@
         app:layout_constraintTop_toBottomOf="@id/containeratas"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="50dp"
         app:layout_constraintBottom_toTopOf="@id/clcategories"
         android:padding="16dp"
         android:background="@drawable/bordercornerwhite"
@@ -83,10 +82,10 @@
             android:layout_marginTop="8dp" />
 
         <TextView
-            android:id="@+id/tv_total"
+            android:id="@+id/tv_income"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Rp 9.000"
+            android:text="Rp 0"
             android:textColor="@color/primary"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -120,7 +119,7 @@
             android:id="@+id/tv_expense"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="RP. 1.000"
+            android:text="RP. 0"
             android:textColor="@color/primary"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -144,17 +143,15 @@
         >
 
         <TextView
-            android:id="@+id/tvbulan"
+            android:id="@+id/tv_detail_trans"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="April"
-            android:layout_marginStart="10dp"
+            android:text="Detail Transaction"
+            android:textColor="@color/primary"
+            android:textSize="24sp"
             android:textStyle="bold"
-            android:textSize="15sp"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/recyclecategory"
-            />
+            app:layout_constraintStart_toStartOf="parent"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclecategory"
@@ -162,15 +159,17 @@
             android:layout_height="0dp"
             android:scrollbars="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvbulan"
-
+            app:layout_constraintTop_toBottomOf="@id/tv_detail_trans"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintVertical_bias="1.0"
             tools:layout_editor_absoluteX="24dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <RelativeLayout
-        android:id="@+id/containernavbar"
+        android:id="@id/containernavbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -178,7 +177,7 @@
         tools:ignore="MissingConstraints">
 
         <FrameLayout
-            android:id="@+id/container"
+            android:id="@+id/containerNavi"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@id/navbar" />
@@ -188,5 +187,4 @@
             android:id="@+id/navbar"/>
 
     </RelativeLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

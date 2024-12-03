@@ -26,7 +26,7 @@
             android:layout_height="0dp"
             android:text="@string/tv_others"
             android:fontFamily="@font/montserrat_semi_bold"
-            android:textSize="16sp"
+            android:textSize="20sp"
             android:layout_weight="1"
             android:gravity="center"
             android:textColor="@color/primary"/>
@@ -40,16 +40,7 @@
             android:gravity="center"
             android:textColor="@color/blue"/>
     </LinearLayout>
-    <TextView
-        android:id="@+id/transaction_category"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/tv_rent"
-        android:fontFamily="@font/montserrat_regular"
-        android:textSize="16sp"
-        android:gravity="center"
-        android:textColor="@color/primary"/>
+
     <TextView
         android:id="@+id/transaction_amount"
         android:layout_width="0dp"
