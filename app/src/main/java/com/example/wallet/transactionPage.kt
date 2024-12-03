@@ -22,6 +22,7 @@ class transactionPage : AppCompatActivity() {
 
         val expenseTextView = findViewById<TextView>(R.id.tv_total_expense)
         val incomeTextView = findViewById<TextView>(R.id.tv_total_income)
+        val balanceAll = findViewById<TextView>(R.id.balance_amount)
 
         val jenisKategori = listOf("Entertainment", "Food", "Gift", "Groceries", "Medicine", "Rent", "Savings", "Transport")
 
@@ -60,6 +61,7 @@ class transactionPage : AppCompatActivity() {
                                     }
                                 }
 
+                                balanceAll.text = formatCurrency(income - expense)
                                 expenseTextView.text = formatCurrency(expense)
                                 incomeTextView.text = formatCurrency(income)
                             }

@@ -44,6 +44,7 @@ class HomePage : AppCompatActivity() {
         val navbar = findViewById<View>(R.id.navbar)
         NavBarComponent(this,navbar)
 
+        val balance = findViewById<TextView>(R.id.tv_balance_nominal)
         val transaction: LinearLayout = findViewById(R.id.transaction)
 
         transaction.setOnClickListener {
@@ -127,6 +128,7 @@ class HomePage : AppCompatActivity() {
                                     }
                                 }
 
+                                balance.text = formatCurrency(income - expense)
                                 expenseTextView.text = formatCurrency(expense)
                                 incomeTextView.text = formatCurrency(income)
                             }
