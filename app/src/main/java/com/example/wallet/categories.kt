@@ -49,11 +49,11 @@ class categories : AppCompatActivity() {
         val entertainment = findViewById<LinearLayout>(R.id.llentertaiment)
 
         makanan.setOnClickListener {
-            openActivitySubCategories("makanan", R.drawable.makanan, 50000)
+            openActivitySubCategories("Food", R.drawable.makanan, 50000)
         }
 
         transport.setOnClickListener {
-            openActivitySubCategories("transport", R.drawable.transport, 30000)
+            openActivitySubCategories("Transport", R.drawable.transport, 30000)
         }
 
         medicine.setOnClickListener {
@@ -69,11 +69,14 @@ class categories : AppCompatActivity() {
         }
 
         gifts.setOnClickListener {
-            openActivitySubCategories("Gifts", R.drawable.gifts, 70000)
+            openActivitySubCategories("Gift", R.drawable.gifts, 70000)
         }
 
         entertainment.setOnClickListener {
             openActivitySubCategories("Entertainment", R.drawable.entertaiment, 100000)
+        }
+        savings.setOnClickListener {
+            openActivitySubCategories("Savings", R.drawable.savings, 100000)
         }
 
     }
